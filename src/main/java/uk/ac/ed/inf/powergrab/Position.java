@@ -28,7 +28,7 @@ public class Position {
     //Going West decreases.
     public Position nextPosition (Direction direction) {//This function returns the next position of the drone when it makes a move in the specified compass direction.
     		if (direction == Direction.N) {
-    			return new Position(latitude+0.0003,longitude);//0.0003 is how far the drone moves in one move.
+//    			return new Position(latitude+0.0003,longitude);//0.0003 is how far the drone moves in one move.
     		}
     		if (direction == Direction.NNE) { //Adding to longitude and latitude as we go East.
     			return new Position(latitude+h2,longitude+h4);
