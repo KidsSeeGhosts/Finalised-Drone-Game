@@ -106,8 +106,16 @@ public class App
 //        }
         
         //THIS SECTION OF THE CODE ALLOWS ME TO PARSE THE GEOJSON AT A PARTICULAR URL
-        
-        String mapString = "http://homepages.inf.ed.ac.uk/stg/powergrab/2019/01/23/powergrabmap.geojson";
+    		String usermonthString = Integer.toString(usermonth);
+    		String userdateString = Integer.toString(userdate);
+    		if (usermonth<10) {
+    			usermonthString = ("0"+usermonth);
+    		}
+    		if (userdate<10) {
+    			userdateString = ("0"+userdate);
+    		}
+        String mapString = "http://homepages.inf.ed.ac.uk/stg/powergrab/"+useryear+"/"+usermonthString+"/"+userdateString+"/powergrabmap.geojson";
+        System.out.println(mapString);
         URL mapURL = null;
 		try {
 			mapURL = new URL(mapString);
