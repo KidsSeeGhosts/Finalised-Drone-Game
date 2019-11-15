@@ -158,12 +158,6 @@ public class App
 		
 		//FINISHED PARSING GEOJSON. MAPSOURCE CONTAINS THE FULL GEOJSON FROM THE WEBSERVER AT THIS STAGE.
 		
-		//At this point call the stateless drone
-		//StatelessDrone.run(mapSource,);
-		
-        //FeatureCollection fc =FeatureCollection.fromJson(mapSource);
-        //System.out.println(fc.features().get(0).getProperty("coins").toString());
-        
         Position startPosition = new Position(userlatitude,userlongitude);
         String nameuserdate = Integer.toString(userdate);
         String nameusermonth = Integer.toString(usermonth);
@@ -177,13 +171,14 @@ public class App
         		//System.out.println(newFileName);
         
         if (dronetype.equals("stateless")){
-        		StatelessDrone statelessdrone = new StatelessDrone(startPosition,userSeed);//makes a statless drone
-        		statelessdrone.run(mapSource,newFileName);//the drone will now run through the given map
+        		StatelessDrone statelessdrone = new StatelessDrone(startPosition,userSeed,mapSource,newFileName);//makes a stateless drone
+        		statelessdrone.run();//the drone will now run through the given map
         }
         
         
         if (dronetype.equals("stateful")){
-    		//to do
+        		StatefulDrone statefuldrone = new StatefulDrone(startPosition,userSeed,mapSource,newFileName);//makes a stateful drone
+        		statefuldrone.run();//the drone will now run through the given map
         }
         
     }
