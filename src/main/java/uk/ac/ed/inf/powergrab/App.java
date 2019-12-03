@@ -108,7 +108,7 @@ public class App
         if (dronetype.equals("stateless")){
         		StatelessDrone statelessdrone = new StatelessDrone(startPosition,userSeed,mapSource,newFileName);//makes a stateless drone
         		statelessdrone.run();//the drone will now run through the given map
-        		System.out.println("Optimality: "+(statelessdrone.coins.divide(totalCoins, 2, RoundingMode.HALF_EVEN)).multiply(new BigDecimal(100)));//optimality of drone calculated and printed
+        		System.out.println("Optimality: "+(statelessdrone.coins.divide(totalCoins, 2, RoundingMode.HALF_DOWN)).multiply(new BigDecimal(100)));//optimality of drone calculated and printed
         }
         
         
